@@ -1,4 +1,4 @@
-const container = document.querySelector(".container");
+const card = document.querySelector(".card");
 const search = document.querySelector(".search-box button");
 const weatherBox = document.querySelector(".weather-box");
 const weatherDetails = document.querySelector(".weather-details");
@@ -8,7 +8,10 @@ search.addEventListener("click", () => {
   const APIKey = "f434b38ca3e5ddddeb469b6aa2f7525f";
   const city = document.querySelector(".search-box input").value;
 
-  if (city === "") return;
+  if (city === "") {
+    card.style.height = "150px";
+    return;
+  }
 
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`
@@ -16,7 +19,7 @@ search.addEventListener("click", () => {
     .then((response) => response.json())
     .then((json) => {
       if (json.cod === "404") {
-        container.style.height = "500px";
+        card.style.height = "500px";
         weatherBox.style.display = "none";
         weatherDetails.style.display = "none";
         error404.style.display = "block";
@@ -69,6 +72,6 @@ search.addEventListener("click", () => {
       weatherDetails.style.display = "";
       weatherBox.classList.add("fadeIn");
       weatherDetails.classList.add("fadeIn");
-      container.style.height = "650px";
+      card.style.height = "600px";
     });
 });

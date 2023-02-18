@@ -14,7 +14,17 @@ body {
   background: #06283d;
 }
 
+@media (max-width: 992px) {
+  .card {
+    margin-top: -200px;
+  }
+}
+
 .container {
+  display: flex;
+  justify-content: center;
+}
+.card {
   position: relative;
   width: 400px;
   height: 150px;
@@ -26,10 +36,14 @@ body {
   transition: 0.6s ease-out;
 }
 
-.container p {
+.card p {
   font-size: 20px;
   text-align: center;
   padding-bottom: 10px;
+}
+
+.card {
+  border: 0px;
 }
 
 .search-box {
@@ -84,7 +98,6 @@ body {
 
 .weather-box img {
   width: 60%;
-  margin-top: 30px;
 }
 
 .weather-box .temperature {
@@ -92,7 +105,6 @@ body {
   color: #06283d;
   font-size: 4rem;
   font-weight: 800;
-  margin-top: 30px;
   margin-left: -16px;
 }
 
@@ -113,7 +125,6 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
 }
 
 .weather-details .humidity,
@@ -138,7 +149,6 @@ body {
   color: #06283d;
   font-size: 26px;
   margin-right: 10px;
-  margin-top: 6px;
 }
 
 .weather-details span {
